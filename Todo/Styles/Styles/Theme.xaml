@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary  xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:styles="clr-namespace:KantimeEvv.Styles" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+                    
+                     x:Class="KantimeEvv.Styles.Theme">
+    <ResourceDictionary.MergedDictionaries>
+        <styles:Colors></styles:Colors>
+        <styles:Fonts></styles:Fonts>
+        <styles:Icons></styles:Icons>
+    </ResourceDictionary.MergedDictionaries>
+
+
+    <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="White" />
+        <Setter Property="BarTextColor" Value="Black" />
+       
+    </Style>
+
+    <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{StaticResource LightPageBackgroundColor}" />
+        <Setter Property="Padding" Value="16"/>
+    </Style>
+
+
+    <Style TargetType="xct:BadgeView">
+        <Setter Property="AutoHide" Value="True"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="BadgePosition" Value="TopRight"/>
+     
+        <Setter Property="BackgroundColor" Value="Red"/>
+        <Setter Property="FontSize" Value="8"/>
+    </Style>
+
+
+    <Style TargetType="TabbedPage" ApplyToDerivedTypes="True" >
+
+        <Setter Property="BarBackgroundColor" Value="{StaticResource TabBackgroundColor}" />
+        
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+
+                           
+                            <Setter Property="SelectedTabColor" Value="White" />
+                            <Setter Property="UnselectedTabColor" Value="Gray" />
+                        </VisualState.Setters>
+                    </VisualState>
+                 
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="xct:TabViewItem" ApplyToDerivedTypes="True" >
+        
+    </Style>
+
+
+    <!--#region Labels-->
+
+
+
+    <Style x:Key="BaseLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="R" />
+        <Setter Property="FontSize" Value="{StaticResource Medium}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+        
+    </Style>
+
+    <Style x:Key="MicroLabel" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="{StaticResource Micro}"/>
+    </Style>
+
+    <Style x:Key="MicroLabelBold" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="{StaticResource Micro}"/>
+        <Setter Property="FontFamily" Value="SB" />
+    </Style>
+    
+    <Style x:Key="SmallLabel" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="{StaticResource Small}"/>
+    </Style>
+
+    <Style x:Key="SmallLabelBold" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="{StaticResource Small}"/>
+        <Setter Property="FontFamily" Value="SB" />
+    </Style>
+
+    <Style x:Key="MediumLabel" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="{StaticResource Medium}"/>
+
+    </Style>
+
+    <Style x:Key="MediumLabelBold" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="{StaticResource Medium}"/>
+        <Setter Property="FontFamily" Value="SB" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource LightPrimaryTextColor}}" />
+    </Style>
+
+    <Style x:Key="Medium2Label" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="{StaticResource Medium2}"/>
+    </Style>
+
+    <Style x:Key="Medium2LabelBold" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="{StaticResource Medium2}"/>
+        <Setter Property="FontFamily" Value="SB" />
+    </Style>
+    
+    <Style x:Key="LargeLabel" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="{StaticResource Large}"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="LargeLabelBold" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="{StaticResource Large}"/>
+        <Setter Property="FontFamily" Value="SB" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource LightPrimaryTextColor}}" />
+
+       
+    </Style>
+
+    <Style x:Key="Large2LabelBold" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="{StaticResource Large2}"/>
+        <Setter Property="FontFamily" Value="SB" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource LightPrimaryTextColor}}" />
+
+
+    </Style>
+
+    <Style x:Key="Large1LabelBold" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="{StaticResource Large1}"/>
+        <Setter Property="FontFamily" Value="SB" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource LightPrimaryTextColor}}" />
+
+
+    </Style>
+
+
+
+    <Style x:Key="Headline2_FontAwesome" TargetType="Label">
+        <Setter Property="FontFamily" Value="FontAwesome_Solid" />
+        <Setter Property="FontSize" Value="{StaticResource Headline2FontSize}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+
+    <Style x:Key="RegularLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="R" />
+        <Setter Property="FontSize" Value="{StaticResource Headline4FontSize}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+    <Style x:Key="Headline4_MulishBold" TargetType="Label">
+        <Setter Property="FontFamily" Value="Mulish_Bold" />
+        <Setter Property="FontSize" Value="{StaticResource Headline4FontSize}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+    <Style x:Key="Headline4_MulishBlack" TargetType="Label">
+        <Setter Property="FontFamily" Value="Mulish_Black" />
+        <Setter Property="FontSize" Value="{StaticResource Headline4FontSize}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+
+    <Style x:Key="Subtitle1_MulishRegular" TargetType="Label">
+        <Setter Property="FontFamily" Value="Mulish_Regular" />
+        <Setter Property="FontSize" Value="{StaticResource Subtitle1FontSize}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+    <Style x:Key="Subtitle1_MulishBold" TargetType="Label">
+        <Setter Property="FontFamily" Value="Mulish_Bold" />
+        <Setter Property="FontSize" Value="{StaticResource Subtitle1FontSize}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+    <Style x:Key="Subtitle1_MulishBlack" TargetType="Label">
+        <Setter Property="FontFamily" Value="Mulish_Black" />
+        <Setter Property="FontSize" Value="{StaticResource Subtitle1FontSize}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+    <Style x:Key="Subtitle1_MulishExtraBold" TargetType="Label">
+        <Setter Property="FontFamily" Value="Mulish_ExtraBold" />
+        <Setter Property="FontSize" Value="{StaticResource Subtitle1FontSize}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+
+    <Style x:Key="Body1_MulishRegular" TargetType="Label">
+        <Setter Property="FontFamily" Value="Mulish_Regular" />
+        <Setter Property="FontSize" Value="{StaticResource Body1FontSize}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+    <Style x:Key="Body1_MulishSemiBold" TargetType="Label">
+        <Setter Property="FontFamily" Value="Mulish_Regular" />
+        <Setter Property="FontSize" Value="{StaticResource Body1FontSize}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+    <Style x:Key="Body1_MulishBold" TargetType="Label">
+        <Setter Property="FontFamily" Value="Mulish_Bold" />
+        <Setter Property="FontSize" Value="{StaticResource Body1FontSize}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+    <Style x:Key="Body1_MulishBlack" TargetType="Label">
+        <Setter Property="FontFamily" Value="Mulish_Black" />
+        <Setter Property="FontSize" Value="{StaticResource Body1FontSize}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+    
+    <Style x:Key="Body2_MulishRegular" TargetType="Label">
+        <Setter Property="FontFamily" Value="Mulish_Regular" />
+        <Setter Property="FontSize" Value="{StaticResource Body2FontSize}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+
+    <!--#endregion-->
+    
+    <!--#region Links-->
+
+    <Style x:Key="Base_Link" TargetType="Label">
+        <Setter Property="FontFamily" Value="Mulish_Bold" />
+        <Setter Property="TextDecorations" Value="Underline" />
+        <Setter Property="FontSize" Value="{StaticResource Body1FontSize}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Frames-->
+    
+    <Style x:Key="Base_FrameEntry" TargetType="Frame">
+        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="Padding" Value="5, 0" />
+        <Setter Property="BorderColor" Value="{StaticResource EntryBorderColor}"/>
+        <Setter Property="IsClippedToBounds" Value="True"/>
+        <Setter Property="HasShadow" Value="False" />
+    </Style>
+
+    <Style x:Key="FrameCard" TargetType="Frame">
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Padding" Value="10" />
+      
+        <Setter Property="IsClippedToBounds" Value="True"/>
+        <Setter Property="HasShadow" Value="False" />
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Entry-->
+
+    <Style x:Key="Base_Entry" TargetType="Entry">
+        <Setter Property="FontFamily" Value="R" />
+        <Setter Property="FontSize" Value="{StaticResource Medium2}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource LightPlaceholderTextColor}, Dark={StaticResource DarkPlaceholderTextColor}}" />
+    </Style>
+
+    <Style x:Key="Error_Entry" TargetType="Entry">
+        <Setter Property="FontFamily" Value="R" />
+        <Setter Property="TextColor" Value="{StaticResource FailColor}" />
+        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource LightPlaceholderTextColor}, Dark={StaticResource DarkPlaceholderTextColor}}" />
+    </Style>
+
+    <Style x:Key="OutlinedEntry" TargetType="Entry" BasedOn="{StaticResource Base_Entry}">
+        <Setter Property="FontFamily" Value="R" />
+         
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource LightPlaceholderTextColor}, Dark={StaticResource DarkPlaceholderTextColor}}" />
+    </Style>
+
+
+
+
+
+
+    <!--#endregion-->
+
+    <!--#region Picker-->
+
+    <Style x:Key="Base_Picker" TargetType="Picker">
+        <Setter Property="FontFamily" Value="Mulish_Regular" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Date Picker-->
+
+    <Style x:Key="Base_DatePicker" TargetType="DatePicker">
+        <Setter Property="FontFamily" Value="Mulish_Regular" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Buttons-->
+    
+    <Style x:Key="Base_Button" TargetType="Button">
+        <Setter Property="CornerRadius" Value="30" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="HeightRequest" Value="45" />
+        <Setter Property="FontFamily" Value="M" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="FontSize" Value="{StaticResource ButtonFontSize}" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            
+                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}" />
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightButtonTextColor}, Dark={StaticResource DarkButtonTextColor}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightCardDisabledBackgroundColor}, Dark={StaticResource DarkCardDisabledBackgroundColor}}" />
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryTextColor}, Dark={StaticResource DarkSecondaryTextColor}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextButton" TargetType="Button" BasedOn="{StaticResource Base_Button}">
+
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+
+                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Transparent}, Dark={StaticResource DarkTransparentBackgroundColor}}" />
+
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource LightButtonColor}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightTransparentBackgroundColor}, Dark={StaticResource DarkTransparentBackgroundColor}}" />
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource DarkDisabledTextColor}, Dark={StaticResource DarkDisabledTextColor}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="OutlinedButton" TargetType="Button" BasedOn="{StaticResource Base_Button}">
+        <Setter Property="CornerRadius" Value="7" />
+        <Setter Property="BorderWidth" Value="1" />
+ 
+ 
+        <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonTextColor}}" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+
+                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightTransparentBackgroundColor}, Dark={StaticResource DarkTransparentBackgroundColor}}" />
+
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonTextColor}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightCardDisabledBackgroundColor}, Dark={StaticResource DarkCardDisabledBackgroundColor}}" />
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkSecondaryTextColor}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+
+
+    </Style>
+
+    <Style x:Key="OutlinedButtonSmall" TargetType="Button" BasedOn="{StaticResource OutlinedButton}">
+        <Setter Property="CornerRadius" Value="2" />
+        
+        <Setter Property="HeightRequest" Value="30" />
+        <Setter Property="FontSize" Value="14" />
+      
+    </Style>
+
+    
+    <Style x:Key="ContainedButton" TargetType="Button" BasedOn="{StaticResource Base_Button}">
+        <Setter Property="CornerRadius" Value="2" />
+    </Style>
+
+    <Style x:Key="ContainedButtonSmall" TargetType="Button" BasedOn="{StaticResource Base_Button}">
+        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="HeightRequest" Value="30" />
+        <Setter Property="FontSize" Value="14" />
+        
+    </Style>
+
+    <!--#endregion-->
+
+    <Style x:Key="BaseAvatar" TargetType="xct:AvatarView">
+        <Setter Property="BackgroundColor" Value="#0747A691" />
+        <Setter Property="HeightRequest" Value="30" />
+        <Setter Property="WidthRequest" Value="30" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="B" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <Style x:Key="RectAvatar" TargetType="xct:AvatarView" BasedOn="{StaticResource BaseAvatar}">
+       
+        <Setter Property="CornerRadius" Value="2"/>
+
+    </Style>
+
+    <Style x:Key="CircleAvatar" TargetType="xct:AvatarView" BasedOn="{StaticResource BaseAvatar}">
+
+    </Style>
+
+  
+    <!--#region AvatarView-->
+    
+    
+
+   
+    <!--#endregion-->
+
+    
+</ResourceDictionary>
