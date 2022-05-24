@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using Todo.Shared;
 using TodoWebAPI.Models;
 using Task = TodoWebAPI.Models.Task;
 
@@ -12,6 +15,7 @@ namespace TodoWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class TasksController : ControllerBase
     {
         private readonly TodoDBContext _context;
@@ -23,16 +27,43 @@ namespace TodoWebAPI.Controllers
 
         // GET: api/Tasks
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Task>>> GetTasks()
+        public async Task<ActionResult<TaskResponse>> GetTasks()
         {
-            return await _context.Tasks.ToListAsync();
+            try
+            {
+                var tasks = await _context.Tasks.ToListAsync();
+                List<TaskModel> tasks1 = new List<TaskModel>();
+                foreach(var item in tasks)
+                {
+                    TaskModel model = new TaskModel()
+                    {
+                        TaskId = item.TaskId,
+                        TaskName = item.TaskName,
+                        TaskDesc = item.TaskDesc
+                    };
+                    tasks1.Add(model);
+                }
+   
+
+                TaskResponse taskResponse = new TaskResponse()
+                {
+                    Tasks = tasks1,
+                    IsSuccess = true
+                };
+
+                return taskResponse;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         // GET: api/Tasks/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Task>> GetTask(int id)
         {
-            Task task = await _context.Tasks.Include(x => x.User).Where(x=>x.TaskId == id).FirstOrDefaultAsync();
+            Task task = await _context.Tasks.Include(x => x.UserId).Where(x=>x.TaskId == id).FirstOrDefaultAsync();
 
             if (task == null)
             {

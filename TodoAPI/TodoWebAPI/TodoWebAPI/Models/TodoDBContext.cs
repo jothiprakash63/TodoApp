@@ -1,8 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TodoWebAPI.Models.Entities;
 
 namespace TodoWebAPI.Models
 {
@@ -15,13 +17,14 @@ namespace TodoWebAPI.Models
     //update-database initialcreate (to revert migration)
     //script-migration
     #endregion
-    public class TodoDBContext:DbContext
+    public class TodoDBContext:IdentityDbContext<AppUser>
     {
         public TodoDBContext(DbContextOptions<TodoDBContext> dbContextOptions):base(dbContextOptions)
         {
 
         }
         public DbSet<User> Users { get; set; }
+
         public DbSet<Task> Tasks { get; set; }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{

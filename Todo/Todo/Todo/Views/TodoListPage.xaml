@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:model="clr-namespace:Todo.Shared;assembly=Todo.Shared"
+             x:Class="Todo.Views.TodoListPage"
+             NavigationPage.HasNavigationBar="True"
+             Title="Home Page"
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="test"/>
+            <Label Text="test"/>
+            <CollectionView Margin="5"  ItemsSource="{Binding tasks}"  ItemSizingStrategy="MeasureAllItems">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
+                </CollectionView.ItemsLayout>
+                
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:TaskModel">
+                        <Frame Padding="0"   CornerRadius="8">
+                            <StackLayout Padding="5"  BackgroundColor="Aquamarine" Orientation="Vertical">
+                                <Label Text="{Binding TaskName}"/>
+                                <Label Text="{Binding TaskDesc}"/>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

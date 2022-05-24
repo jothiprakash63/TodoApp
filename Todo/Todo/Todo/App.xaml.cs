@@ -1,4 +1,6 @@
 ﻿using System;
+using Todo.Utilites;
+using Todo.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,8 +13,17 @@ namespace Todo
         {
             InitializeComponent();
 
-          
-            MainPage = new AppShell();
+
+            if (string.IsNullOrWhiteSpace(UserSecureStorage.JwtBearerToken))
+            {
+                MainPage = new LoginPage();
+            }
+            else
+            {
+                MainPage =new NavigationPage(new TodoListPage());
+            }
+
+            
         }
 
         protected override void OnStart()
